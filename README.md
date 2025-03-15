@@ -52,3 +52,7 @@ module nexysVideo (
 
 endmodule
 ```
+
+With the project now set up, it's time to write the I2C and I2S protocol modules, starting with I2S.
+
+## I2S Module
