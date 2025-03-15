@@ -30,7 +30,7 @@ logic [4:0] Cnt_Bclk;
 logic [4:0] Cnt_Lrclk;
 
 // Rising and Falling edges of serial clock
-wire [0:0] BCLK_Fall, BCLK_Rise, BCLK_Fall_int, BCLK_Rise_int;
+logic [0:0] BCLK_Fall, BCLK_Rise, BCLK_Fall_int, BCLK_Rise_int;
 
 // Internal synchronous BCLK and LRCLK signals
 logic [0:0] BCLK_int, LRCLK, LRCLK_int;
@@ -116,7 +116,7 @@ always_ff @(posedge CLK_I) begin
         Data_Out_int[31] <= 0;
         Data_Out_int[30 : 31-DATA_WIDTH] <= D_L_I; // Takes left channel data by default
         Data_Out_int[30-DATA_WIDTH : 0] <= '0;
-    end else if (~Cnt_Lrclk && BCLK_Rise) begin // parallel in
+    end else if ((Cnt_Lrclk == 0) && BCLK_Rise) begin // parallel in
         if (LRCLK_int) begin
             Data_Out_int[31] <= 0;
             Data_Out_int[30 : 31-DATA_WIDTH] <= D_R_I; // Takes right channel data
@@ -146,7 +146,7 @@ always_ff @(posedge CLK_I) begin
         Data_In_int <= '0;
         D_L_O_int <= '0;
         D_R_O_int <= '0;
-    end else if (~Cnt_Lrclk && BCLK_Fall) begin // Load out parallel data
+    end else if ((Cnt_Lrclk == 0) && BCLK_Fall) begin // Load out parallel data
         if (LRCLK_int) begin
             D_L_O_int <= Data_In_int[31 : 32-DATA_WIDTH];
             Data_In_int <= '0;
