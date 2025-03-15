@@ -16,8 +16,8 @@ In order to interface with the codec properly we will need modules for initializ
 
 ## First Steps
 Create a new project in Vivado, selecting the Nexys Video as the board used, the part number for this specific project is `xc7a200tlsbg484-2L` but. From reading the datasheet linked above, we see that there are a few pins we'll need to interact with so you should uncomment those from the constraint file provided by Vivado. The relevant lines are
-`
-## Clock Signal
+```
+Clock Signal
 set_property -dict { PACKAGE_PIN R4    IOSTANDARD LVCMOS33 } [get_ports sys_clk]; #IO_L13P_T2_MRCC_34 Sch=sysclk
 
 ## Audio Codec
@@ -30,11 +30,11 @@ set_property -dict { PACKAGE_PIN U6    IOSTANDARD LVCMOS33 } [get_ports { ac_mcl
 ## I2C
 set_property -dict { PACKAGE_PIN W5    IOSTANDARD LVCMOS33 } [get_ports { adau1761_cclk }]; #IO_L15N_T2_DQS_34 Sch=scl
 set_property -dict { PACKAGE_PIN V5    IOSTANDARD LVCMOS33 } [get_ports { adau1761_cout }]; #IO_L16N_T2_34 Sch=sda
-`
+```
 
 Each of these properties should be uncommented and can be given any name you choose, mine are as seen in the get_ports {} sections. We will also create a top level module within vivado_nexysVideo directory called nexysVideo.sv. The top module skeleton is below
 
-`
+```
 module nexysVideo (
     input [0:0] sys_clk,
     
@@ -51,4 +51,4 @@ module nexysVideo (
 );
 
 endmodule
-`
+```
