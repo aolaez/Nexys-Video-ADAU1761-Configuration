@@ -456,7 +456,7 @@ always_comb begin
 end
 ```
 
-With the groundwork laid we now need a state machine to handle communication with audio codec using all the previously defined signals.
+With the groundwork laid we now need a state machine to handle communication with the audio codec using all the previously defined signals.
 
 ```
 //////////////////////////////////////////////////////////////////////////////////////////
