@@ -10,8 +10,7 @@ If you're not interested in the process of writing the modules for interfacing w
 `vivado -mode batch -source ../vivado.tcl`
 
 ## Project Overview and Resources
-In order to interface with the codec properly we will need modules for initializing the codec, which we'll use I2C for as the board is configured for that by default, and I2S in order to stream audio data. Relevant pins for these protocols can be found from the datasheet below.\
-[ADAU1761 Datasheet](https://www.analog.com/media/en/technical-documentation/data-sheets/adau1761.pdf)\
+In order to interface with the codec properly we will need modules for initializing the codec, which we'll use I2C for as the board is configured for that by default, and I2S in order to stream audio data. Relevant pins for these protocols can be found from the ADAU1761 datasheet [here](https://www.analog.com/media/en/technical-documentation/data-sheets/adau1761.pdf).\
 If you're unfamiliar with the [I2C](https://www.circuitbasics.com/basics-of-the-i2c-communication-protocol/) and [I2S](https://www.allaboutcircuits.com/technical-articles/introduction-to-the-i2s-interface/) protocols you can use these articles for reference.
 
 ## First Steps
