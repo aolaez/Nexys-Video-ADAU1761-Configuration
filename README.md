@@ -6,7 +6,7 @@ The purpose of this repo is to show how to implement audio passthrough from the 
 I recently needed to get audio working on this codec and really struggled to find resources that weren't either for microcontrollers or softcores, the previously linked example project was the only pure HDL implementation I could find after many hours of searching so hopefully this helps anyone trying to interface with the ADAU1761 on an FPGA. This project uses Vivado IP and a tcl script to run through the Vivado design flow.
 
 ## How to generate bitstream
-If you're not interested in the process of writing the modules for interfacing with the codec and simply want to generate the audio passthrough, navigate to synth->vivado_nexysVideo->build and run
+If you're not interested in the process of writing the modules for interfacing with the codec and simply want to generate the audio passthrough, navigate to `synth->vivado_nexysVideo->build` and run
 `vivado -mode batch -source ../vivado.tcl`
 
 ## Project Overview and Resources
