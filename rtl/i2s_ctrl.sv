@@ -92,7 +92,7 @@ always_ff @(posedge CLK_I) begin
         Cnt_Lrclk <= 0;
         LRCLK <= 0; // Left channel active by default
     end else if (BCLK_Fall) begin
-        if (Cnt_Lrclk == 31) begin// half of 64 bit frame
+        if (Cnt_Lrclk == 31) begin // half of 64 bit frame
             Cnt_Lrclk <= 0;
             LRCLK <= ~LRCLK;
         end else begin
