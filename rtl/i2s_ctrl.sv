@@ -3,20 +3,20 @@ module i2s_ctrl#(
     parameter DATA_WIDTH = 16
 )
 (
-    input logic [0:0] CLK_I,
-    input logic [0:0] RST_I,
-    input logic [0:0] EN_TX_I,
-    input logic [0:0] EN_RX_I,
-    input logic [3:0] FS_I,
-    input logic [0:0] MM_I,
-    input logic [DATA_WIDTH-1:0] D_L_I,
-    input logic [DATA_WIDTH-1:0] D_R_I,
-    output logic [DATA_WIDTH-1:0] D_L_O,
-    output logic [DATA_WIDTH-1:0] D_R_O,
-    output logic [0:0] BCLK_O,
-    output logic [0:0] LRCLK_O,
-    output logic [0:0] SDATA_O,
-    input logic [0:0] SDATA_I
+    input logic [0:0] CLK_I, // 100 MHz sys clock
+    input logic [0:0] RST_I, // sys reset
+    input logic [0:0] EN_TX_I, // Transmit enable (pushes sound data into chip)
+    input logic [0:0] EN_RX_I, // Receive enable (pushes sound data out of chip)
+    input logic [3:0] FS_I, // Sampling rate selector/Frame sync selection
+    input logic [0:0] MM_I, // Master mode select
+    input logic [DATA_WIDTH-1:0] D_L_I, // Left channel data in
+    input logic [DATA_WIDTH-1:0] D_R_I, // Right channel data out
+    output logic [DATA_WIDTH-1:0] D_L_O, // Left channel data out
+    output logic [DATA_WIDTH-1:0] D_R_O, // Right channel data out
+    output logic [0:0] BCLK_O, // Serial bit clock
+    output logic [0:0] LRCLK_O, // Left/Right channel clock
+    output logic [0:0] SDATA_O, // Serial data out
+    input logic [0:0] SDATA_I // Serial data in
 );
 
 //////////////////////////////////////////////////////////////////////////////////////////
