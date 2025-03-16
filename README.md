@@ -15,7 +15,7 @@ In order to interface with the codec properly we will need modules for initializ
 [I2C](https://www.circuitbasics.com/basics-of-the-i2c-communication-protocol/) and [I2S](https://www.allaboutcircuits.com/technical-articles/introduction-to-the-i2s-interface/) protocols explained
 
 ## First Steps
-Create a new project in Vivado, selecting the Nexys Video as the board used, the part number for this specific project is `xc7a200tlsbg484-2L` but. From reading the datasheet linked above, we see that there are a few pins we'll need to interact with so you should uncomment those from the constraint file provided by Vivado. The relevant lines are
+Create a new project in Vivado, selecting the Nexys Video as the board used, the part number for this specific project is `xc7a200tlsbg484-2L`. From reading the datasheet linked above, we see that there are a few pins we'll need to interact with so you should uncomment those from the constraint file provided by Vivado. The relevant lines are
 ```
 Clock Signal
 set_property -dict { PACKAGE_PIN R4    IOSTANDARD LVCMOS33 } [get_ports sys_clk]; #IO_L13P_T2_MRCC_34 Sch=sysclk
