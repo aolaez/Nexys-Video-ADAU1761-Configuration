@@ -10,9 +10,9 @@ If you're not interested in the process of writing the modules for interfacing w
 `vivado -mode batch -source ../vivado.tcl`
 
 ## Project Overview and Resources
-In order to interface with the codec properly we will need modules for initializing the codec, which we'll use I2C for as the board is configured for that by default, and I2S in order to stream audio data. Relevant pins for these protocols can be found from the datasheet below.
-[ADAU1761 Datasheet](https://www.analog.com/media/en/technical-documentation/data-sheets/adau1761.pdf)
-[I2C](https://www.circuitbasics.com/basics-of-the-i2c-communication-protocol/) and [I2S](https://www.allaboutcircuits.com/technical-articles/introduction-to-the-i2s-interface/) protocols explained
+In order to interface with the codec properly we will need modules for initializing the codec, which we'll use I2C for as the board is configured for that by default, and I2S in order to stream audio data. Relevant pins for these protocols can be found from the datasheet below.\
+[ADAU1761 Datasheet](https://www.analog.com/media/en/technical-documentation/data-sheets/adau1761.pdf)\
+If you're unfamiliar with the [I2C](https://www.circuitbasics.com/basics-of-the-i2c-communication-protocol/) and [I2S](https://www.allaboutcircuits.com/technical-articles/introduction-to-the-i2s-interface/) protocols you can use these articles for reference.
 
 ## First Steps
 Create a new project in Vivado, selecting the Nexys Video as the board used, the part number for this specific project is `xc7a200tlsbg484-2L`. From reading the datasheet linked above, we see that there are a few pins we'll need to interact with so you should uncomment those from the constraint file provided by Vivado. We'll also use a button on the board as our reset signal. The relevant lines are
