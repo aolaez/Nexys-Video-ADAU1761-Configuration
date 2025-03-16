@@ -799,3 +799,6 @@ endmodule
 
 This top level is now ready to be used for audio passthrough as configured above, but can be customized to fit your needs. For example, if you want to generate sound using RTL like you would for a drum machine or synthesizer, you can achieve that by passing different configuration options to the I2S module. A tcl script is provided in the `synth` directory to program audio passthrough automatically with Vivado.
 
+## Verification Using DPI-C
+I had previously tested the reference modules on the actual Nexys Video board and verified that audio transmission worked as expected. Unfortunately, I recently lost access to the board but thanks to the fact that these modules have now been converted to SystemVerilog, I can verify the audio transmission using a DPI-C testbench and .wav files!
+
