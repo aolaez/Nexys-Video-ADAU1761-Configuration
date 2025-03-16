@@ -429,10 +429,9 @@ always_comb begin
 end
 
 // Open-drain outputs for bi-directional SDA and SCL
-always_comb begin
-    SDA = (rSda) ? 1'bz : 1'b0;
-    SCL = (rScl) ? 1'bz : 1'b0;
-end
+assign SDA = (rSda) ? 1'bz : 1'b0;
+assign SCL = (rScl) ? 1'bz : 1'b0;
+
 
 
 endmodule

@@ -1,6 +1,6 @@
 module nexysVideo (
     input [0:0] sys_clk,
-    input [0:0] sys_rst.
+    input [0:0] sys_rst,
     
     // I2C Config Interface
     inout [0:0] adau1761_cclk,
